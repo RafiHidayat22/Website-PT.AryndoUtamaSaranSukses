@@ -2,14 +2,10 @@ import { getArticleBySlug } from '../../../../lib/articles';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
-// Gunakan tipe khusus untuk params
-interface ArticleDetailPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function ArticleDetailPage({ params }: ArticleDetailPageProps) {
+export default async function ArticleDetailPage({
+  params,
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+}:any) {
   const article = await getArticleBySlug(params.slug);
 
   if (!article) return notFound();

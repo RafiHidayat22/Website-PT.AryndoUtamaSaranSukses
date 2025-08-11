@@ -9,7 +9,7 @@ interface Props {
   image_url: string;
   date: string;
   summary: string;
-  updated_at: number;
+  updated_at: string;
   content: string;
 }
 
