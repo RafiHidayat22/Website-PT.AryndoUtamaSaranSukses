@@ -12,17 +12,7 @@ export default function AuthPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
-  const handleSignUp = async () => {
-    setLoading(true);
-    setMessage('');
-    const { error } = await supabase.auth.signUp({ email, password });
-    setLoading(false);
-    if (error) {
-      setMessage(error.message);
-    } else {
-      setMessage('Daftar berhasil! Cek email untuk verifikasi.');
-    }
-  };
+
 
   const handleSignIn = async () => {
     setLoading(true);

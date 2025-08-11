@@ -2,7 +2,14 @@ import { getArticleBySlug } from '../../../../lib/articles';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
-export default async function ArticleDetailPage({ params }: { params: { slug: string } }) {
+// Gunakan tipe khusus untuk params
+interface ArticleDetailPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function ArticleDetailPage({ params }: ArticleDetailPageProps) {
   const article = await getArticleBySlug(params.slug);
 
   if (!article) return notFound();
@@ -21,7 +28,9 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
 
         <div className="order-2 md:order-1">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{article.title}</h1>
-          <p className="text-gray-500 text-sm mb-4">{new Date(article.updated_at).toLocaleDateString()}</p>
+          <p className="text-gray-500 text-sm mb-4">
+            {new Date(article.updated_at).toLocaleDateString()}
+          </p>
         </div>
       </div>
 
@@ -30,7 +39,10 @@ export default async function ArticleDetailPage({ params }: { params: { slug: st
       </p>
 
       {article.content && (
-        <div className="prose mt-6" dangerouslySetInnerHTML={{ __html: article.content }} />
+        <div
+          className="prose mt-6"
+          dangerouslySetInnerHTML={{ __html: article.content }}
+        />
       )}
     </main>
   );
