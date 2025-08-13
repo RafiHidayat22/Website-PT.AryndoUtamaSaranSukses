@@ -239,7 +239,6 @@ const PreEmploymentPage = () => {
           </div>
         </div>
       </motion.section>
-
     </div>
   );
 };
