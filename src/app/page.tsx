@@ -4,6 +4,8 @@ import Image from "next/image";
 import ClientAryndo from '../../component/Client';
 import { motion, easeOut, useInView } from "framer-motion";
 import { useRef } from "react";
+import CardSlider from "../../component/cardSlide";
+
 
 
 const fadeUp = {
@@ -41,6 +43,12 @@ const Page = () => {
   const refSupplySolution = useRef(null);
   const isInViewSupplySolution = useInView(refSupplySolution, { once: true, amount: 0.3 });
 
+    const refDrilling = useRef(null);
+  const isInViewDrilling = useInView(refTrainingHub, { once: true, amount: 0.3 });
+
+  const refMedical = useRef(null);
+  const isInViewMedical = useInView(refSupplySolution, { once: true, amount: 0.3 });
+
   const refClients = useRef(null);
   const isInViewClients = useInView(refClients, { once: true, amount: 0.3 });
 
@@ -70,7 +78,7 @@ const Page = () => {
             <h3 className="text-2xl mt-4">Accredited by IADC, IWCF, OPITO, and BNSP.</h3>
             <h3 className="text-2xl">Prepare for global industry standards.</h3>
             <button className="mt-6 px-6 py-2 bg-[#EE4312] text-white rounded-2xl shadow hover:bg-[#d6360c] transition">
-              Explore Our Services
+              <a href="#ourService">Explore Our Services</a>
             </button>
           </motion.div>
           <motion.div
@@ -143,73 +151,21 @@ const Page = () => {
         />
       </motion.div>
 
-      {/* Our Service Section */}
-      <motion.div
-        ref={refOurService}
-        variants={slideLeft}
-        initial="hidden"
-        animate={isInViewOurService ? "visible" : "hidden"}
-        className="bg-[#24046B] py-12 px-4"
-      >
-        <h1 className="text-center text-white text-3xl font-bold mb-10">
-          Our Service
-        </h1>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-20 max-w-6xl mx-auto">
-          {/* Kartu 1 */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-sm flex flex-col h-[500px]">
-            <div className="relative">
-              <Image
-                src="/homeTrain.png"
-                alt="Training"
-                width={400}
-                height={200}
-                className="w-full h-56 object-cover"
-              />
-              <div className="absolute -bottom-5 left-6 w-10 h-10 bg-[#EE4312]" />
-            </div>
-            <div className="p-6 pt-10 flex flex-col flex-1">
-              <h2 className="text-xl font-bold mb-2 text-black">
-                Training & Manpower Services
-              </h2>
-              <p className="text-sm text-gray-700 mb-4">
-                Connects top engineering and technical talent to vital energy projects across Upstream, Midstream, LNG, and Downstream sectors—offshore and onshore. We deliver skilled professionals fast to power your success.
-              </p>
-              <div className="mt-auto">
-                <button className="bg-[#EE4312] hover:bg-[#d6360c] text-white px-4 py-2 rounded-md text-sm transition">
-                  Discover More
-                </button>
-              </div>
-            </div>
-          </div>
+{/* Our Service Section */}
+<motion.div
+  ref={refOurService}
+  variants={slideLeft}
+  initial="hidden"
+  animate={isInViewOurService ? "visible" : "hidden"}
+  className="bg-[#24046B] py-12 px-4"
+>
+  <h1 id="ourService" className="text-center text-white text-3xl font-bold mb-2">
+    Our Service
+  </h1>
 
-          {/* Kartu 2 */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-sm flex flex-col h-[500px]">
-            <div className="relative">
-              <Image
-                src="/homeSupply.png"
-                alt="Supply"
-                width={400}
-                height={200}
-                className="w-full h-56 object-cover"
-              />
-              <div className="absolute -bottom-5 left-6 w-10 h-10 bg-[#EE4312]" />
-            </div>
-            <div className="p-6 pt-10 flex flex-col flex-1">
-              <h2 className="text-xl font-bold mb-2 text-black">
-                Supply & Rental Equipment
-              </h2>
-              <p className="text-sm text-gray-700 mb-4">
-                Delivers trusted Oil & Gas equipment and supply solutions to keep your operations running smoothly—minimizing downtime and maximizing productivity, wherever you work.
-              </p>
-              <div className="mt-auto">
-                <button className="bg-[#EE4312] hover:bg-[#d6360c] text-white px-4 py-2 rounded-md text-sm transition">
-                  Discover More
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
+  <CardSlider/>
+</motion.div>
+
 
       {/* Training Hub Section */}
       <motion.div
@@ -340,6 +296,146 @@ const Page = () => {
               </h3>
               <p className="text-sm text-gray-300 mt-2 max-w-xs">
                 We go beyond expectations, delivering responsive and personalized support at every step.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+        {/*Drilling and Logging*/}
+        <div
+          ref={refDrilling}
+          className="bg-white py-12 px-4"
+        >
+          <motion.h2
+            variants={slideLeft}
+            initial="hidden"
+            animate={isInViewDrilling ? "visible" : "hidden"}
+            className="text-center text-2xl md:text-3xl font-bold text-black mb-10"
+          >
+            Professional Drilling & Mud Logging Solutions
+          </motion.h2>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInViewDrilling ? "visible" : "hidden"}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          >
+            {/* Card 1 */}
+            <div className="flex flex-col">
+              <Image
+                src="/iconAnalyst.png"
+                alt="icon"
+                width={60}
+                height={60}
+                className="mb-4"
+              />
+              <h3 className="text-lg md:text-xl font-bold text-black">
+                Accurate Subsurface Analysis
+              </h3>
+              <p className="text-sm text-gray-700 mt-2 max-w-xs">
+                Mud logging provides precise insights into subsurface formations, helping operators make informed drilling decisions.
+              </p>
+            </div>
+            {/* Card 2 */}
+            <div className="flex flex-col">
+              <Image
+                src="/iconRealTime.png"
+                alt="icon"
+                width={60}
+                height={60}
+                className="mb-4"
+              />
+              <h3 className="text-lg md:text-xl font-bold text-black">
+                Real-Time Drilling Monitoring
+              </h3>
+              <p className="text-sm text-gray-700 mt-2 max-w-xs">
+                Continuous analysis of drilling mud samples allows for efficient monitoring of drilling parameters, ensuring safety and operational efficiency.
+              </p>
+            </div>
+            {/* Card 3 */}
+            <div className="flex flex-col">
+              <Image
+                src="/iconExplore.png"
+                alt="icon"
+                width={60}
+                height={60}
+                className="mb-4"
+              />
+              <h3 className="text-lg md:text-xl font-bold text-black">
+                Cost-Effective Exploration
+              </h3>
+              <p className="text-sm text-gray-700 mt-2 max-w-xs">
+                By detecting hydrocarbons and assessing formation characteristics early, mud logging supports smarter, more economical exploration and production strategies.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+
+        {/* Medical Check Up */}
+        <div
+          ref={refMedical}
+          className="bg-[#24046B] py-12 px-4"
+        >
+          <motion.h2
+            variants={slideLeft}
+            initial="hidden"
+            animate={isInViewMedical ? "visible" : "hidden"}
+            className="text-center text-2xl md:text-3xl font-bold text-white mb-10"
+          >
+            Comprehensive Medical Check-Up Services
+          </motion.h2>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate={isInViewMedical ? "visible" : "hidden"}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          >
+            {/* Card 1 */}
+            <div className="flex flex-col">
+              <Image
+                src="/iconHealth.png"
+                alt="icon"
+                width={60}
+                height={60}
+                className="mb-4"
+              />
+              <h3 className="text-lg md:text-xl font-bold text-white">
+                Thorough Health Assessment
+              </h3>
+              <p className="text-sm text-gray-300 mt-2 max-w-xs">
+                Pre-employment medical check-ups provide an in-depth assessment of candidates’ health, ensuring they are fit for their assigned roles.
+              </p>
+            </div>
+            {/* Card 2 */}
+            <div className="flex flex-col">
+              <Image
+                src="/iconAssurance.png"
+                alt="icon"
+                width={60}
+                height={60}
+                className="mb-4"
+              />
+              <h3 className="text-lg md:text-xl font-bold text-white">
+                Workplace Safety Assurance
+              </h3>
+              <p className="text-sm text-gray-300 mt-2 max-w-xs">
+                Screening identifies potential health risks that could affect job performance, supporting a safe and efficient work environment.
+              </p>
+            </div>
+            {/* Card 3 */}
+            <div className="flex flex-col">
+              <Image
+                src="/iconRisk.png"
+                alt="icon"
+                width={60}
+                height={60}
+                className="mb-4"
+              />
+              <h3 className="text-lg md:text-xl font-bold text-white">
+                Risk Mitigation & Cost Efficiency
+              </h3>
+              <p className="text-sm text-gray-300 mt-2 max-w-xs">
+                Early detection of health concerns helps reduce insurance claims and medical-related expenses, optimizing workforce management.
               </p>
             </div>
           </motion.div>

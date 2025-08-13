@@ -2,68 +2,101 @@
 
 import { useState } from "react";
 import {motion} from "framer-motion"
+import Link from "next/link";
 
 
 const Training = () => {
   const [openMain, setOpenMain] = useState("Migas Pemboran");
   const [openSub, setOpenSub] = useState("Operator Lantai Bor (OLB)");
 
-  const dataLocalAccreditaion = [
-    {
-      title: "Migas Pemboran",
-      subItems: [
-        { name: "Operator Lantai Bor (OLB)", button: true },
-        { name: "Operator Menara Bor (OMB)", button: true },
-        { name: "Juru Bor (JB)", button: true },
-        { name: "Ahli Pengendali Bor (APB)", button: true },
-      ],
-    },
-    {
-      title: "Migas Perawatan Sumur",
-      subItems: [
-        { name: "Operator Lantai Perawatan Sumur (OLPS)", button: true },
-        { name: "Operator Menara Perawatan Sumur (OMPS)", button: true },
-        { name: "Operator Unit Perawatan Sumur", button: true },
-        { name: "Pengawas Perawatan Sumur", button: true },
-      ],
-    },
-    { title: "Migas K3", subItems: [
-        { name: "Ahli K3 Umum", button: true },
-        { name: "Operator K3 Migas", button: true },
-        { name: "Pengawas K3 Migas", button: true },
-        { name: "Pengawas Utama K3 Migas", button: true },
-        { name: "Auditor SMK3 Operator Gas Tester", button: true },
-        { name: "Ahli K3 Listrik", button: true },
-      ], 
-    },
-    { title: "Safety/ programs", subItems: [
-        { name: "Pengawas Utama K3 Migas", button: true },
-        { name: "H2S", button: true },
-        { name: "Fire Fighting", button: true },
-        { name: "Working at Height", button: true },
-        { name: "Operator Alat Angkat dan Angkut", button: true },
-        { name: "Juru Ikat (Rigger)", button: true },
-        { name: "Inspektur Crane", button: true },
-        { name: "Juru Las (Welder)", button: true },
-        { name: "Forklift", button: true },
-        { name: "Scaffolding", button: true },
-        { name: "Authorized Gas Tester", button: true },
-        { name: "Ahli Fluida Pengeboran", button: true },
-        { name: "Mud Logger", button: true },
-    ] },
-    { title: "Aryndo Utama Internal house Training", subItems: [
-        { name: "Basic Safety Training", button: true },
-        { name: "Basic Sea Survival", button: true },
-        { name: "BOSIET (Basic offshore Safety Induction and Emergency Training)", button: true },
-        { name: "HUET (Helicopter Underwater Escape Training)", button: true },
-        { name: "OERTM (Offshore Emergency Rescue Team Member)", button: true },
-        { name: "OFTM (Offshore Fire Team Member)", button: true },
-        { name: "Helicopter Refueling", button: true },
-        { name: "Offshore Emergency Helideck Team Member (OEHTM)", button: true },
-        { name: "Basic First Aid and CPR", button: true },
-        { name: "Basic Fire Fighting", button: true },
-    ] },
-  ];
+const dataLocalAccreditaion = [
+  {
+    title: "Migas Pemboran",
+    subItems: [
+      { name: "Operator Lantai Bor (OLB)", button: true },
+      { name: "Operator Menara Bor (OMB)", button: true },
+      { name: "Juru Bor (JB)", button: true },
+      { name: "Ahli Pengendali Bor (APB)", button: true },
+    ],
+  },
+  {
+    title: "Migas Perawatan Sumur",
+    subItems: [
+      { name: "Operator Lantai Perawatan Sumur (OLPS)", button: true },
+      { name: "Operator Menara Perawatan Sumur (OMPS)", button: true },
+      { name: "Operator Unit Perawatan Sumur (OUPS)", button: true },
+      { name: "Ahli Pengendali Perawatan Sumur (APPS)", button: true },
+    ],
+  },
+  {
+    title: "Migas K3",
+    subItems: [
+      { name: "Ahli K3 Migas", button: true },
+      { name: "Pengawas K3 Migas", button: true },
+      { name: "Operator K3 Migas", button: true },
+      { name: "Ahli K3 Listrik", button: true },
+      { name: "Teknisi K3 Listrik", button: true },
+      { name: "Authorized Gas Tester", button: true },
+    ],
+  },
+  {
+    title: "BNSP",
+    subItems: [
+      { name: "Inspector Scaffolding", button: true },
+      { name: "Pembantu Operator Scaffolding", button: true },
+      { name: "Petugas Penanganan Bahaya Gas H2S", button: true },
+      { name: "Teknisi Ruang Terbatas", button: true },
+      { name: "Bekerja Pada Ketinggian Level 1", button: true },
+      { name: "Bekerja Pada Ketinggian Level 2", button: true },
+      { name: "Juru Ikat (Rigger)", button: true },
+      { name: "Operator Forklift", button: true },
+      { name: "Juru Las (Welder)", button: true },
+      { name: "Ahli Hygiene Industri Muda", button: true },
+      { name: "Ahli Hygiene Industri Madya", button: true },
+      { name: "Ahli Hygiene Industri Utama", button: true },
+      { name: "Training Of Trainer", button: true },
+    ],
+  },
+  {
+    title: "KEMENAKER",
+    subItems: [
+      { name: "Ahli K3 Umum", button: true },
+      { name: "SKP & Lisensi AK3U", button: true },
+      { name: "Auditor SMK3", button: true },
+      { name: "Petugas P3K", button: true },
+      { name: "Supervisor Perancah", button: true },
+      { name: "Teknisi K3 Ruang Terbatas", button: true },
+      { name: "Tenaga Kerja Pada Ketinggian Tingkat 1 (TKPK)", button: true },
+      { name: "Tenaga Kerja Bangunan Tinggi Tingkat 1 (TKBT)", button: true },
+      { name: "Teknisi Deteksi Gas Ruang Terbatas", button: true },
+      { name: "Operator Overhead Crane Kelas III", button: true },
+      { name: "Petugas K3 Penyelamat Ruang Terbatas", button: true },
+      { name: "Ahli K3 Muda Lingkungan Kerja", button: true },
+      { name: "Regu Penanggulangan Kebakaran (Kelas C)", button: true },
+    ],
+  },
+  {
+    title: "Inhouse Training",
+    subItems: [
+      { name: "Helicopter Landing Officer", button: true },
+      { name: "Helideck Assistant", button: true },
+      { name: "Helicopter Refuelling", button: true },
+      { name: "Advanced Fire Fighting", button: true },
+      { name: "H2S Awareness", button: true },
+      { name: "Offshore Emergency Response Team Members", button: true },
+      { name: "Manual Handling", button: true },
+      { name: "Defensive Driving Training", button: true },
+      { name: "Basic Sea Survival", button: true },
+      { name: "Basic Safety Training", button: true },
+      { name: "Basic Fire Fighting", button: true },
+      { name: "Basic First Aid", button: true },
+      { name: "Rigging Slinging & Lifting", button: true },
+      { name: "Fire Fighting Member / Leader", button: true },
+      { name: "Beam Pump Operation", button: true },
+      { name: "Beam Pump Downhole Assembly Function", button: true },
+    ],
+  },
+];
 
 const dataIADC = [
   {
@@ -82,6 +115,7 @@ const dataIADC = [
         name: "Completion of the IADC RigPass program confirms that personnel have met the basic requirements defined by safety and training professionals in the drilling industry, regardless of the rig’s location.",
         button: true,
       },
+      { name: "IADC Rig Pass", button: true },
     ],
   },
   {
@@ -113,12 +147,158 @@ const dataIADC = [
   },
   {
     title: "IWCF & IADC WELLSHARP",
-    subItems: [{
-      name: "This course fulfills IWCF requirements for Surface and Combined Stack qualifications. It targets critical position holders and follows an IWCF-approved curriculum. Participants will gain comprehensive knowledge of well control theory and practical skills for handling well control situations. Upon passing the exam, candidates receive IWCF Level 3 or 4 certification, valid for two years.",
-      button:true,
-    }
-    ]
-  }
+    subItems: [
+      { name: "IWCF Well Control for Surface BOP Level 2", button: true },
+      { name: "IWCF Well Control for Combined Surface/Subsea BOP Level 2", button: true },
+      { name: "IWCF Well Control for Surface BOP Level 3,4", button: true },
+      { name: "IWCF Well Control for Combined Surface/Subsea BOP Level 3,4", button: true },
+      { name: "IWCF Well Intervention Wireline Level 2", button: true },
+      { name: "IWCF Well Intervention Coiled Tubing Level 2", button: true },
+      { name: "IWCF Well Intervention Snubbing Level 2", button: true },
+      { name: "IWCF Well Intervention Coiled Tubing Level 3&4", button: true },
+      { name: "IWCF Well Intervention Wireline Level 3&4", button: true },
+      { name: "IWCF Well Intervention Snubbing Level 3&4", button: true },
+      { name: "IADC Well Sharp/Well Control for Surface BOP Introductory Level", button: true },
+      { name: "IADC WellSharp/Well Control for Combined Surface/Subsea Introductory Level", button: true },
+      { name: "IADC Well Sharp/Well Control for Surface BOP Driller Level", button: true },
+      { name: "IADC Well Sharp/Well Control for Combined Surface/Subsea Driller Level", button: true },
+      { name: "IADC Well Sharp/Well Control for Surface BOP Supervisor Level", button: true },
+      { name: "IADC WellSharp/Well Control for Combined Surface/Subsea Supervisor Level", button: true },
+      { name: "IADC/Well Services Wireline", button: true },
+      { name: "IADC/Well Services Coiled Tubing", button: true },
+      { name: "IADC/Well Services Snubbing", button: true },
+      { name: "IADC/Well Services Oil and Gas Operator Representative (OGO)", button: true },
+      { name: "IADC/Well Services Work Over", button: true },
+      { name: "Hydrogen Sulfide (H2S) & SCBA Awareness", button: true },
+      { name: "Stuck Pipe Prevention, Hole Cleaning and Fishing Tools", button: true },
+      { name: "Rig Inspection and Maintenance", button: true },
+      { name: "Fire Safety", button: true },
+      { name: "Confined Space and Rescue Training", button: true },
+      { name: "Authorized Gas Tester", button: true },
+      { name: "Train the Trainer (TOT)", button: true },
+      { name: "Drops and Scaffolding", button: true },
+      { name: "Working On Heights", button: true },
+      { name: "Crane Lifting Operation", button: true },
+    ],
+  },
+  {
+    title: "ECSI",
+    subItems: [
+      { name: "First Aid", button: true },
+      { name: "Advanced First Aid, CPR, And AED", button: true },
+    ],
+  },
+  {
+    title: "DROPS",
+    subItems: [
+      { name: "DROPS", button: true },
+      { name: "DROPPED OBJECTS", button: true },
+      { name: "DROPS AWARENESS", button: true },
+    ],
+  },
+  {
+    title: "IOSH",
+    subItems: [
+      { name: "IOSH Managing Safely", button: true },
+      { name: "IOSH Working Safely", button: true },
+    ],
+  },
+  {
+    title: "HSI",
+    subItems: [
+      { name: "Basic First Aid", button: true },
+      { name: "CPR/AED", button: true },
+      { name: "Wildness First Aid", button: true },
+      { name: "Bloodborne Pathogens", button: true },
+      { name: "Emergency Oxygen Admin", button: true },
+      { name: "Child/Babysitting Safety", button: true },
+      { name: "Pediatrics", button: true },
+      { name: "Combination CPR / AED and First Aid", button: true },
+      { name: "Advanced First Aid", button: true },
+    ],
+  },
+  {
+    title: "NASP-IASP",
+    subItems: [
+      { name: "NASP 10 hour Course for General Industry", button: true },
+      { name: "NASP 30 hour Course for General Industry", button: true },
+      { name: "NASP 10 Hours for Constructions", button: true },
+      { name: "NASP 30 Hours for Constructions", button: true },
+      { name: "Occupational Safety & Health Basic", button: true },
+      { name: "Diploma Occupational Safety & Health Advanced", button: true },
+      { name: "Diploma Occupational Safety and Health Supervisor", button: true },
+      { name: "Diploma Safety Awareness Courses/HAZWOPER Awareness", button: true },
+      { name: "Safety Awareness Courses/ Lockout Tagout", button: true },
+      { name: "Safety Awareness Courses/ Back Safety", button: true },
+      { name: "Safety Awareness Courses/Egress Fire Safety", button: true },
+      { name: "Safety Awareness Courses/ Ergonomics", button: true },
+      { name: "Safety Awareness Courses/Machine Guarding", button: true },
+    ],
+  },
+  {
+    title: "AOSH",
+    subItems: [
+      { name: "First Aid - Level 2 Award in Emergency First Aid at Work", button: true },
+      { name: "First Aid - Level 3 Award in First Aid at Work", button: true },
+      { name: "First Aid - Level 3 Award in Paediatric First Aid", button: true },
+      { name: "Health & Safety - Level 2 Award in Health & Safety at Work Place", button: true },
+      { name: "Health & Safety - Level 3 Award in Health & Safety at Work Place", button: true },
+      { name: "Health & Safety - Level 4 Award in Health & Safety at Work Place", button: true },
+      { name: "Health & Safety - Level 2 Award in Manual Handling - Principles and Practices", button: true },
+      { name: "Health & Safety - Manual Handling Train The Trainer", button: true },
+      { name: "Health & Safety - Level 2 Award in Risk Assessment", button: true },
+      { name: "Health & Safety - Level 3 Award in Risk Assessment", button: true },
+      { name: "Health & Safety - Level 2 Award in COSHH", button: true },
+      { name: "Health & Safety - Level 3 Award in Emergency Rescue from Confined Space", button: true },
+      { name: "Health & Safety - Stress Management", button: true },
+      { name: "Health & Safety - Accident Investigation", button: true },
+      { name: "Health & Safety - Job Safety Analysis", button: true },
+      { name: "Fire Safety - Level 1 Award in Fire Safety Awareness", button: true },
+      { name: "Fire Safety - Level 2 Award in Fire Safety Principles", button: true },
+      { name: "Fire Safety - Level 3 Award in Fire Safety Risk Assessment And Control", button: true },
+      { name: "Food Safety - Level 2 Award in Food Safety Catering", button: true },
+      { name: "Food Safety - Level 2 Award in Food Safety Manufacturing", button: true },
+      { name: "Food Safety - Level 2 Award in Food Safety Retail", button: true },
+      { name: "Food Safety - Level 2 Award in HACCP based Food Safety System in Manufacturing", button: true },
+      { name: "Food Safety - Level 2 Award in Principles of HACCP", button: true },
+      { name: "Food Safety - Level 3 Award in Food Safety Supervision for Catering", button: true },
+      { name: "Food Safety - Level 3 Award in Food Safety Supervision for Manufacturing", button: true },
+      { name: "Food Safety - Level 3 Award in Food Safety Retail", button: true },
+      { name: "Food Safety - Level 4 Award in Managing Food Safety in Catering", button: true },
+      { name: "Food Safety - Level 4 Award in Food Safety Management for Manufacturing", button: true },
+      { name: "Environmental Protection- Level 2 Award in Environmental Principles & Best Practices", button: true },
+      { name: "Environmental Protection- Level 3 Award in Environmental Management Certified", button: true },
+      { name: "Certified Master Trainer (TOT)", button: true },
+      { name: "Working on Height", button: true },
+      { name: "H2S", button: true },
+      { name: "Confined Space", button: true },
+      { name: "Authorized Gas Tester", button: true },
+      { name: "Drops and Scaffolding", button: true },
+      { name: "International managing safely", button: true },
+      { name: "COVID -19 Safety Awareness", button: true },
+      { name: "Person in charge in work", button: true },
+      { name: "HSE Supervisor", button: true },
+    ],
+  },
+  {
+    title: "OPITO BOSIET",
+    subItems: [
+      { name: "BOSIET + TSBB", button: true },
+      { name: "T-BOSIET", button: true },
+      { name: "T-BOSIET + EBS", button: true },
+      { name: "T-BOSIET + TSBB", button: true },
+      { name: "T-BOSIET + EBS + TSBB", button: true },
+      { name: "FOET", button: true },
+      { name: "FOET + TSBB", button: true },
+      { name: "T-FOET", button: true },
+      { name: "T-FOET + EBS", button: true },
+      { name: "T-FOET + TSBB", button: true },
+      { name: "HUET", button: true },
+      { name: "T-HUET", button: true },
+      { name: "T-HUET + EBS", button: true },
+      { name: "TSBB", button: true },
+    ],
+  },
 ];
 
 const dataManpowerProvision = [
@@ -255,7 +435,7 @@ const dataManpowerProvision = [
                   </button>
                   {sub.button && openSub === sub.name && (
                     <button className="bg-orange-500 text-white text-xs px-3 py-1 rounded-md">
-                      Register Now
+                      <Link href='/Contact'>Register Now</Link>
                     </button>
                   )}
                 </div>
@@ -312,7 +492,7 @@ const dataManpowerProvision = [
                   </button>
                   {sub.button && openSub === sub.name && (
                     <button className="bg-orange-500 text-white text-xs px-3 py-1 rounded-md">
-                      Register Now
+                      <Link href='/Contact'>Register Now</Link>
                     </button>
                   )}
                 </div>
@@ -369,7 +549,7 @@ const dataManpowerProvision = [
                   </button>
                   {sub.button && openSub === sub.name && (
                     <button className="bg-orange-500 text-white text-xs px-3 py-1 rounded-md">
-                      Register Now
+                      <Link href='/Contact'>Register Now</Link>
                     </button>
                   )}
                 </div>

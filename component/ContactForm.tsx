@@ -75,7 +75,7 @@ const ContactForm: React.FC = () => {
 
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0 items-center">
         <Image
-          src="/bgContact2.png"
+          src="/CS.png"
           alt="Customer Support"
           height={200}
           width={400}
@@ -84,7 +84,7 @@ const ContactForm: React.FC = () => {
       </div>
 
       <div className="w-full lg:w-1/2 px-4">
-        <h2 className="text-xl font-bold mb-6 text-center">We will be happy to help you</h2>
+        <h2 className="text-xl font-bold mb-6 text-center"></h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex gap-4">
             <div className="w-1/2">

@@ -12,7 +12,6 @@ const Portofolio = [
   '/porto1.png',
   '/porto2.png',
   '/porto3.png',
-  '/porto4.png',
   '/porto5.png',
   '/porto6.png',
   '/porto7.png',

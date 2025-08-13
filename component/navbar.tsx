@@ -17,8 +17,11 @@ const Navbar = () => {
     { name: "About", path: "/About" },
     { name: "Training", path: "/Training" },
     { name: "Supply Chain", path: "/Supply" },
+    { name: "Drilling", path: "/drilling" },
+    { name: "Medical", path: "/medical" },
     { name: "Article", path: "/Articles" },
     { name: "Contact", path: "/Contact" },
+    
   ];
 
   return (
@@ -30,8 +33,8 @@ const Navbar = () => {
           <Image
             src="/logo.png"
             alt="Logo Aryndo"
-            width={70}
-            height={40}
+            width={80}
+            height={50}
             className="object-contain"
           />
           <div className="leading-tight">
@@ -39,7 +42,7 @@ const Navbar = () => {
               PT. ARYNDO UTAMA SARANA SUKSES
             </h1>
             <h3 className="text-[10px] sm:text-xs md:text-sm">
-              DRILLING & ENERGY SERVICES
+              OIL & GAS SERVICES
             </h3>
           </div>
         </div>
