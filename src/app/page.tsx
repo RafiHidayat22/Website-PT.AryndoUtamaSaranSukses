@@ -6,6 +6,7 @@ import { motion, easeOut, useInView } from "framer-motion";
 import { useRef } from "react";
 import CardSlider from "../../component/cardSlide";
 import AcrAryndo from "../../component/acredited";
+import PortoHomeAryndo from "../../component/PortoHome";
 
 
 
@@ -99,38 +100,40 @@ const Page = () => {
         </div>
       </motion.div>
 
-      {/* We Are Aryndo Section */}
-      <motion.div
-        ref={refWeAre}
-        variants={slideDown}
-        initial="hidden"
-        animate={isInViewWeAre ? "visible" : "hidden"}
-        className="bg-white"
-      >
-        <h1 className="text-2xl md:text-4xl text-black text-center font-bold py-8">
-          We Are Aryndo Utama
-        </h1>
-        <div className="relative bg-[url('/bgHome2.png')] bg-cover bg-center h-[475px]">
-          <div className="absolute inset-0 bg-gray-900 opacity-30 z-0" />
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate={isInViewWeAre ? "visible" : "hidden"}
-            className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-12 px-4 h-full text-center md:text-left overflow-hidden py-12 md:py-0"
-          >
-            <Image
-              src="/personHome2.png"
-              alt="image"
-              width={300}
-              height={300}
-              className="object-contain max-h-full w-[200px] h-auto md:w-[300px]"
-            />
-            <h3 className="text-white max-w-xl text-lg md:text-2xl leading-relaxed">
-              Your trusted partner in oil & gas training and recruitment, based in Jakarta with capasity to deliver training in all indonesia area and abroad We offer  various type of training course, IADC & IWCF, NEBOSH, IOSH, LEEA-certified courses, OPITO-approved offshore safety training, and national certifications BNSP, Dinas Perhubungan & Kemnaker for the energy and construction sectors.
-            </h3>
-          </motion.div>
+{/* We Are Aryndo Section */}
+<motion.div
+  ref={refWeAre}
+  variants={slideDown}
+  initial="hidden"
+  animate={isInViewWeAre ? "visible" : "hidden"}
+  className="bg-white"
+>
+  <h1 className="text-2xl md:text-4xl text-black text-center font-bold py-8">
+    We Are Aryndo Utama
+  </h1>
+  <div className="relative bg-[url('/bgHome2.png')] bg-cover bg-center min-h-[475px]">
+    <div className="absolute inset-0 bg-gray-900 opacity-30 z-0" />
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      animate={isInViewWeAre ? "visible" : "hidden"}
+      className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8 px-4 py-12 md:py-8 text-center md:text-left"
+    >
+      {/* Porto Slide */}
+      <div className="w-full md:w-1/2 flex justify-center items-center">
+        <div className="w-full max-w-md rounded-lg overflow-hidden">
+          <PortoHomeAryndo />
         </div>
-      </motion.div>
+      </div>
+
+      {/* Text */}
+      <h3 className="text-white text-base md:text-lg lg:text-xl leading-relaxed max-w-xl">
+        Your trusted partner in oil & gas training and recruitment, based in Jakarta with capacity to deliver training in all Indonesia area and abroad. We offer various type of training course, IADC & IWCF, NEBOSH, IOSH, LEEA-certified courses, OPITO-approved offshore safety training, and national certifications BNSP, Dinas Perhubungan & Kemnaker for the energy and construction sectors.
+      </h3>
+    </motion.div>
+  </div>
+</motion.div>
+
 
       {/* Accredited Training Provider Section */}
       <motion.div
