@@ -106,9 +106,7 @@ const Page = () => {
                     Address
                   </h2>
                   <h3 className="text-sm md:text-med text-white text-justify">
-                    Ruko Arundaya Blok DA9, Familia Urban, Jalan Mandor Demong nomor
-                    11, Mustika Sari, Mustika Jaya, Kota Bekasi, Provinsi Jawa Barat,
-                    Indonesia, 17157.
+                    Jl. Mawar No.19, RT.03/RW.04, Mustikasari, Kec. Mustika Jaya, Kota Bekasi, Jawa Barat 17157
                   </h3>
                 </div>
               </motion.div>

@@ -103,7 +103,7 @@ export default function CardSlider() {
               </p>
               <div className="mt-auto">
                 <button className="bg-[#EE4312] hover:bg-[#d6360c] text-white px-4 py-2 rounded-md text-sm transition">
-                  Discover More
+                  <Link href='/medical'>Discover More</Link>
                 </button>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function CardSlider() {
               </p>
               <div className="mt-auto">
                 <button className="bg-[#EE4312] hover:bg-[#d6360c] text-white px-4 py-2 rounded-md text-sm transition">
-                  Discover More
+                  <Link href='/drilling'>Discover More</Link>
                 </button>
               </div>
             </div>

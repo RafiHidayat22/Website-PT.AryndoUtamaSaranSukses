@@ -5,6 +5,7 @@ import ClientAryndo from '../../component/Client';
 import { motion, easeOut, useInView } from "framer-motion";
 import { useRef } from "react";
 import CardSlider from "../../component/cardSlide";
+import AcrAryndo from "../../component/acredited";
 
 
 
@@ -38,19 +39,19 @@ const Page = () => {
   const isInViewOurService = useInView(refOurService, { once: true, amount: 0.3 });
 
   const refTrainingHub = useRef(null);
-  const isInViewTrainingHub = useInView(refTrainingHub, { once: true, amount: 0.3 });
+  const isInViewTrainingHub = useInView(refTrainingHub, { once: true, amount: 0.1 });
 
   const refSupplySolution = useRef(null);
-  const isInViewSupplySolution = useInView(refSupplySolution, { once: true, amount: 0.3 });
+  const isInViewSupplySolution = useInView(refSupplySolution, { once: true, amount: 0.1 });
 
     const refDrilling = useRef(null);
-  const isInViewDrilling = useInView(refTrainingHub, { once: true, amount: 0.3 });
+  const isInViewDrilling = useInView(refDrilling, { once: true, amount: 0.1 });
 
   const refMedical = useRef(null);
-  const isInViewMedical = useInView(refSupplySolution, { once: true, amount: 0.3 });
+  const isInViewMedical = useInView(refMedical, { once: true, amount: 0.1 });
 
   const refClients = useRef(null);
-  const isInViewClients = useInView(refClients, { once: true, amount: 0.3 });
+  const isInViewClients = useInView(refClients, { once: true, amount: 0.1 });
 
   return (
     <>
@@ -75,8 +76,8 @@ const Page = () => {
             <h1 className="text-5xl font-bold">
               Workforce with World-Class Oil & Gas Training
             </h1>
-            <h3 className="text-2xl mt-4">Accredited by IADC, IWCF, OPITO, and BNSP.</h3>
-            <h3 className="text-2xl">Prepare for global industry standards.</h3>
+            <h3 className="text-2xl mt-4">Training services which provided international accreditation and local accreditation </h3>
+            <h3 className="text-2xl">IADC, IWCF, OPITO, NEBOSH, IOSH, LEEA, BNSP, KEMNAKER, DINAS PERHUBUNGAN and Internal House Programs.</h3>
             <button className="mt-6 px-6 py-2 bg-[#EE4312] text-white rounded-2xl shadow hover:bg-[#d6360c] transition">
               <a href="#ourService">Explore Our Services</a>
             </button>
@@ -125,7 +126,7 @@ const Page = () => {
               className="object-contain max-h-full w-[200px] h-auto md:w-[300px]"
             />
             <h3 className="text-white max-w-xl text-lg md:text-2xl leading-relaxed">
-              Your trusted partner in oil & gas training and recruitment, based in Jakarta with a branch in Duri Pekanbaru. We offer IADC & IWCF-certified courses, OPITO-approved offshore safety training, and national certifications BNSP & Kemnaker for the energy and construction sectors.
+              Your trusted partner in oil & gas training and recruitment, based in Jakarta with capasity to deliver training in all indonesia area and abroad We offer  various type of training course, IADC & IWCF, NEBOSH, IOSH, LEEA-certified courses, OPITO-approved offshore safety training, and national certifications BNSP, Dinas Perhubungan & Kemnaker for the energy and construction sectors.
             </h3>
           </motion.div>
         </div>
@@ -142,13 +143,7 @@ const Page = () => {
         <h1 className="text-black text-2xl md:text-4xl font-bold py-8 text-center">
           Accredited Training Provider
         </h1>
-        <Image
-          src="/accredited.png"
-          alt="Accredited"
-          width={1000}
-          height={200}
-          className="w-full max-w-[1000px] h-auto "
-        />
+      <AcrAryndo/>
       </motion.div>
 
 {/* Our Service Section */}

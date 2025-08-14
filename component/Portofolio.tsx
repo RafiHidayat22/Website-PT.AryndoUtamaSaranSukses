@@ -22,7 +22,33 @@ const Portofolio = [
   '/porto12.png',
   '/porto13.png',
   '/porto14.png',
+  '/porto15.png',
+  '/porto20.png',
+  '/porto23.png',
+  '/porto24.png',
+  '/porto25.png',
+  '/porto28.png',
+  '/porto30.png',
+  '/porto31.png',
+  '/porto32.png',
+  '/porto33.png',
+  '/porto34.png',
+  '/porto35.png',
+  '/porto36.png',
+  '/porto37.png',
+  '/porto38.jpg',
+  '/porto39.jpg',
+  '/porto40.jpg',
+  '/porto41.jpg',
+  '/porto42.jpg',
+  '/porto43.jpg',
+  '/porto44.jpg',
+  '/porto45.jpg',
+  '/porto46.jpg',
+  '/porto47.jpg',
+
 ];
+
 
 const PortofolioAryndo = () => {
   return (

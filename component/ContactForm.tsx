@@ -77,8 +77,8 @@ const ContactForm: React.FC = () => {
         <Image
           src="/CS.png"
           alt="Customer Support"
-          height={200}
-          width={400}
+          height={600}
+          width={600}
           className="rounded-md"
         />
       </div>

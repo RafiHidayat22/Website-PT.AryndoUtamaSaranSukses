@@ -2,6 +2,7 @@
 
 import { motion, easeOut, useInView } from "framer-motion";
 import { useRef } from "react";
+import DrillingAryndo from "../../../component/drillingSlide";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -52,17 +53,17 @@ const coreServices = [
   {
     title: "Accurate Subsurface Analysis",
     description: "Provides precise insights into subsurface formations, helping operators make informed drilling decisions.",
-    image: "/bgCore1.jpg",
+    image: "",
   },
   {
     title: "Real-Time Drilling Monitoring",
     description: "Continuous analysis of drilling mud samples ensures safety and operational efficiency.",
-    image: "/bgCore2.jpg",
+    image: "",
   },
   {
     title: "Cost-Effective Exploration",
     description: "Early detection of hydrocarbons and formation issues supports smarter and more economical exploration strategies.",
-    image: "/bgCore3.jpg",
+    image: "",
   },
 ];
 
@@ -114,6 +115,9 @@ const MudLoggingPage = () => {
 
   const refServices = useRef(null);
   const isInViewServices = useInView(refServices, { once: true, amount: 0.3 });
+
+  const refdrilling = useRef(null);
+  const isInViewdrilling = useInView(refdrilling, { once: true, amount: 0.3 });
 
   const refBenefits = useRef(null);
 
@@ -302,7 +306,7 @@ const MudLoggingPage = () => {
             >
               <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
               <div className="relative">
-                <h3 className="text-xl font-bold text-white mb-4">{section.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-2">{section.title}</h3>
                 <ul className="list-disc list-inside text-gray-200 space-y-1">
                   {section.items.map((item, idx) => (
                     <li key={idx}>{item}</li>
@@ -313,6 +317,21 @@ const MudLoggingPage = () => {
           ))}
         </div>
       </section>
+
+              <motion.section
+        ref={refdrilling}
+        variants={fadeUp}
+        initial="hidden"
+        animate={isInViewdrilling ? "visible" : "hidden"}
+        className="px-6 py-4 md:px-20 md:py-4 bg-white text-center"
+      >
+        <div className="max-[400px] mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Mud Logging Services</h1>
+          <div className="w-full h-[400px] py-4">
+            <DrillingAryndo />
+          </div>
+        </div>
+      </motion.section>
 
     </div>
   );

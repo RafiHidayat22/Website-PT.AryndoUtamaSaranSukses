@@ -24,7 +24,7 @@ const Footer = () => {
 
           <div className="text-sm leading-relaxed">
             <p className="font-semibold">PT. ARYNDO UTAMA SARANA SUKSES</p>
-            <p>Jl. Mawar No.19, RT.03/RW.04, Mustikasari, Kec. Mustika Jaya, Kota Bks, Jawa Barat 17157</p>
+            <p>Jl. Mawar No.19, RT.03/RW.04, Mustikasari, Kec. Mustika Jaya, Kota Bekasi, Jawa Barat 17157</p>
           </div>
 
           {/* Social Media Icons */}

@@ -21,41 +21,46 @@ const page = () => {
       </div>
 
       {/* Section Content */}
-      <section className="px-4 py-12 max-w-6xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl font-bold text-center text-black mb-10"
-        >
-          Shaping the Future with Aryndo
-        </motion.h1>
+<section className="px-4 py-12 max-w-6xl mx-auto">
+  <motion.h1
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-3xl font-bold text-center text-black mb-10"
+  >
+    Shaping the Future with Aryndo
+  </motion.h1>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-          >
-            <Image
-              src="/bgAbout2.png"
-              alt="About image"
-              width={300}
-              height={300}
-              className="object-contain w-[200px] md:w-[300px] h-auto rounded"
-            />
-          </motion.div>
+  <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+    <motion.div
+      initial={{ x: -50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className="flex flex-col items-center"
+    >
+      <Image
+        src="/direktur.png"
+        alt="About image"
+        width={300}
+        height={300}
+        className="object-contain w-[200px] md:w-[300px] h-auto rounded"
+      />
+      <p className="mt-3 text-lg font-semibold text-black text-center">
+        Eka Lusiana – President Director
+      </p>
+    </motion.div>
 
-          <motion.h3
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            className="text-black text-justify max-w-xl leading-relaxed"
-          >
-            PT. Aryndo Utama Sarana Sukses is a trusted provider of onshore/offshore drilling and geothermal services, committed to delivering high-quality, cost-efficient solutions while upholding global HSE standards and supporting workforce development through training and career opportunities in Indonesia and abroad.
-          </motion.h3>
-        </div>
-      </section>
+    <motion.h3
+      initial={{ x: 50, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className="text-black text-justify max-w-xl leading-relaxed"
+    >
+      PT. Aryndo Utama Sarana Sukses is a trusted provider of onshore/offshore drilling and geothermal services, committed to delivering high-quality, cost-efficient solutions while upholding global HSE standards and supporting workforce development through training and career opportunities in Indonesia and abroad.
+    </motion.h3>
+  </div>
+</section>
+
 
     <section className=" bg-[#24046B] py-16 px-6 md:px-20 flex flex-col items-center space-y-16">
       {/* Section 1 */}
