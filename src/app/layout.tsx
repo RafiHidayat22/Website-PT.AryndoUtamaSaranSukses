@@ -16,6 +16,11 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "PT. Aryndo Utama Sarana Sukses",
   description: "Delivering top-quality services in the drilling and energy sectors.",
+    icons: {
+    icon: "/logo.png", // atau png/svg
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
